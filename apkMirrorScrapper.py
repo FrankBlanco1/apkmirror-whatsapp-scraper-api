@@ -33,10 +33,14 @@ def get_WhatsApp_whatsnew(soup : BeautifulSoup):
     
     html_features = soup.find("div", {"class" : "notes wrapText"}).find_all("p")
     
-    whatsnew = ""
+    whatsnew = []
     
     for feature in html_features:
-        whatsnew += feature.text.strip()
+        
+        feature = feature.text.strip().split("\n")
+        for item in feature:
+            
+            whatsnew.append(item)
         
     return whatsnew
 
