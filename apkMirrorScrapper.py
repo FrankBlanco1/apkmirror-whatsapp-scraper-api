@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 from cloudscraper import create_scraper
-import json
 
 scraper = create_scraper()
 
@@ -49,7 +48,6 @@ def get_WhatsApp_variants(soup : BeautifulSoup):
     html_variants = soup.find_all("div", {"class" : "table-row headerFont"})
     
     scrapped_variants = []
-    # get_variant_whatsNew(html_variants[1])
     
     # The first item is just the header of the variants
     for i in range(1, len(html_variants)):
@@ -70,5 +68,3 @@ def get_WhatsApp_variants(soup : BeautifulSoup):
     return scrapped_variants
 
 variants = get_WhatsApp_metadata()
-print(variants['Whats New'])
-print(variants)
