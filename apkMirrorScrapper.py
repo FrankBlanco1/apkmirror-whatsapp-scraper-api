@@ -14,7 +14,7 @@ def get_WhatsApp_metadata():
     
     try:
         content = scraper.get(variants_url, headers=headers)
-        print(f"Status : {content.status_code}")
+        print(f" apkmirror status : {content.status_code}")
     except Exception as e:
         print(f"ERROR: {str(e)}")
     
@@ -66,5 +66,3 @@ def get_WhatsApp_variants(soup : BeautifulSoup):
         })
         
     return scrapped_variants
-
-variants = get_WhatsApp_metadata()
