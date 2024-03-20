@@ -1,3 +1,4 @@
+from starlette.responses import JSONResponse
 from fastapi import FastAPI
 from apkMirrorScrapper import get_WhatsApp_metadata
 from fastapi_utils.tasks import repeat_every
@@ -32,7 +33,7 @@ app = FastAPI(lifespan=lifespan)
     
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return JSONResponse(status_code = 200, content = {"message": "Hello World"})
 
 @app.get("/whatsapp_variants")
 async def WhatsApp_variants():
@@ -42,4 +43,4 @@ async def WhatsApp_variants():
     with open('cached_data.json', 'r') as file:
         json_data = json.load(file)
         
-    return json_data
+    return JSONResponse(status_code = 200, content = json_data)
