@@ -1,7 +1,7 @@
 from starlette.responses import JSONResponse
 from fastapi import FastAPI
+from fastapi_utilities import repeat_every
 from apkMirrorScrapper import get_WhatsApp_metadata
-from fastapi_utils.tasks import repeat_every
 from contextlib import asynccontextmanager
 import json
 
