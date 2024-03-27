@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 import requests
 import json
 
-@repeat_every(seconds=60*10)
+@repeat_every(seconds=60)
 async def keep_service_alive():
     
     # This function is for make sure that service wont down because render free plan
