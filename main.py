@@ -13,7 +13,7 @@ async def keep_service_alive():
     # (If the service is innactive for 15 minutes it will down)
     
     try:
-        r = requests.get("https://waupdate.onrender.com")
+        r = requests.get("https://waupdate.onrender.com", timeout=5)
         
         if r.status_code == 503:
             print("Warning: Service Unavailable")
